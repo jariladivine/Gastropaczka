@@ -151,7 +151,6 @@ body {
 
 .hero-left {
     flex: 1;
-    background-color: #e65c23;
     position: relative;
     overflow: hidden;
 }
