@@ -56,6 +56,11 @@ body {
     color: #000000;
     font-size: 15px;
     font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: #e65c23;
 }
 
 .has-dropdown a {
@@ -78,7 +83,7 @@ body {
     gap: 14px;
 }
 
-/* UNIWERSALNE PRZYCISKI */
+/* PRZYCISKI */
 .btn-outline {
     display: inline-flex;
     align-items: center;
@@ -92,6 +97,12 @@ body {
     border-radius: 30px;
     background: transparent;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .btn-black {
@@ -106,6 +117,13 @@ body {
     padding: 10px 26px;
     border-radius: 30px;
     cursor: pointer;
+    border: 1.5px solid #000000;
+    transition: all 0.2s ease;
+}
+
+.btn-black:hover {
+    background-color: transparent;
+    color: #000000;
 }
 
 .btn-black.large, .btn-outline.large {
@@ -125,17 +143,7 @@ body {
     font-size: 15px !important;
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
-    margin-left: 5px;
-}
-
-.social-icons a {
-    color: #000000;
-}
-
-/* SEKCJA GŁÓWNA (PODZIAŁ 50/50) */
+/* SEKCJA GŁÓWNA - HERO SPLIT (50/50) */
 .hero-section {
     display: flex;
     min-height: calc(100vh - 90px);
@@ -145,21 +153,14 @@ body {
     flex: 1;
     background-color: #e65c23;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bg-circles {
-    position: absolute;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle at -10% 50%, transparent 40%, rgba(255,255,255,0.06) 41%, rgba(255,255,255,0.06) 55%, transparent 56%);
+    overflow: hidden;
 }
 
 .food-box-img {
-    max-width: 85%;
-    object-fit: contain;
-    z-index: 5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .hero-right {
@@ -175,32 +176,50 @@ body {
     width: 100%;
 }
 
+.dash-badge-hero {
+    background-color: #e65c23;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .product-title {
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 5px;
 }
 
 .calories-range {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
+    color: #e65c23;
     margin-bottom: 30px;
 }
 
 .section-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* MAKROSKŁADNIKI */
 .macro-container {
     display: flex;
     gap: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .macro-card {
-    background: #f6f5f3;
+    background: transparent;
     border: 1.5px solid #000000;
     border-radius: 16px;
     flex: 1;
@@ -208,25 +227,38 @@ body {
     text-align: center;
 }
 
-.macro-icon {
-    margin-bottom: 8px;
-}
-
 .macro-value {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
 }
 
 .macro-label {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
+    color: #555;
+}
+
+/* MINERAŁY W HERO */
+.micro-highlights {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.micro-badge {
+    background: #000000;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
 }
 
 .macro-disclaimer {
     font-size: 11px;
-    color: #f3704b;
-    font-weight: 500;
+    color: #666;
     margin-bottom: 35px;
+    line-height: 1.4;
 }
 
 .description-title {
@@ -254,7 +286,50 @@ body {
     gap: 15px;
 }
 
-/* TYPOWE NAGŁÓWKI SEKCJI */
+/* FILTRY I WYSZUKIWANIE */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    background: #f6f5f3;
+    padding: 15px;
+    border-radius: 16px;
+    border: 1.5px solid #000;
+}
+
+.filter-label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.filter-btn {
+    background: #ffffff;
+    border: 1.5px solid #000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #e65c23;
+    color: #ffffff;
+    border-color: #e65c23;
+}
+
+/* SIATKA DANIA / WARIANTY */
+.variants-section {
+    padding: 80px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .global-title {
     font-size: 36px;
     font-weight: 800;
@@ -266,14 +341,7 @@ body {
     font-size: 15px;
     text-align: center;
     color: #444;
-    margin-bottom: 50px;
-}
-
-/* SEKCJA: DOPASUJ WARIANT DO SIEBIE */
-.variants-section, .pricing-section, .calculator-section, .other-packages, .addons-section {
-    padding: 80px 40px;
-    max-width: 1440px;
-    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 .variants-grid {
@@ -301,16 +369,16 @@ body {
     object-fit: cover;
 }
 
-.badge {
+.badge.label-sodium {
     position: absolute;
     bottom: 15px; right: 15px;
-    background: #ffffff;
-    color: #000000;
+    background: #fff5f2;
+    color: #e65c23;
+    border: 1.5px solid #e65c23;
     padding: 4px 12px;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 12px;
     border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .card-body {
@@ -321,33 +389,88 @@ body {
     justify-content: space-between;
 }
 
-.card-body h3 {
-    font-size: 18px;
+.dish-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.dish-tags span {
+    font-size: 10px;
     font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.tag-grain { background: #e3f2fd; color: #0d47a1; }
+.tag-mineral { background: #e8f5e9; color: #1b5e20; }
+.tag-herb { background: #fff8e1; color: #ff6f00; }
+
+.card-body h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 6px;
 }
 
 .card-kcal {
     font-size: 13px;
-    color: #666;
-    margin: 4px 0 10px 0;
+    color: #e65c23;
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
-.card-desc {
-    font-size: 13px;
-    color: #222;
-    margin-bottom: 20px;
+/* TRASPONENTNY SKŁAD */
+.transparent-components {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px dashed #ccc;
+    cursor: pointer;
+}
+
+.comp-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.minerals-grid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    color: #333;
 }
 
 .card-actions {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
 }
 
-/* SEKCJA: CENNIK */
+.card-actions .btn-outline, .card-actions .btn-black {
+    flex: 1;
+    justify-content: center;
+}
+
+/* CENNIK */
+.pricing-section, .calculator-section, .other-packages {
+    padding: 60px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .pricing-subtitle {
     font-size: 18px;
     text-align: center;
     font-weight: 700;
+    margin-top: 20px;
 }
 
 .pricing-info-text {
@@ -359,29 +482,27 @@ body {
 
 .pricing-tabs {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .tab-btn {
-    border: 1.5px solid #000000;
-    background: #ffffff;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 13px;
+    background: transparent;
+    border: 1.5px solid #000;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
 }
 
 .tab-btn.active {
-    background: #e65c23;
-    color: #ffffff;
-    border-color: #e65c23;
+    background: #000;
+    color: #fff;
 }
 
-/* TABELA */
 .table-container {
     overflow-x: auto;
 }
@@ -393,8 +514,8 @@ body {
 }
 
 .pricing-table th, .pricing-table td {
-    border: 1.5px solid #000000;
-    padding: 12px 15px;
+    border: 1.5px solid #000;
+    padding: 16px;
     text-align: center;
     font-size: 14px;
 }
@@ -404,91 +525,78 @@ body {
     font-weight: 700;
 }
 
-.pricing-table td.strike {
-    text-decoration: line-through;
-    color: #666;
-}
-
-.pricing-table td.bold-cell {
-    font-weight: 700;
-    background: #f6f5f3;
-}
-
-.orange-light-cell {
-    background-color: #fdf3ef;
-    font-weight: 600;
-}
+.bold-cell { font-weight: 700; }
+.strike { text-decoration: line-through; color: #888; }
+.orange-light-cell { background-color: #fff5f2; color: #e65c23; font-weight: 700; }
 
 .code-badge {
-    background-color: #e65c23;
-    color: white;
-    font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 4px;
+    background: #000;
+    color: #fff;
     font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
     display: inline-block;
 }
 
-/* SEKCJA: KALKULATOR KALORII */
+/* KALKULATOR */
 .calculator-container {
     display: flex;
-    border: 1.5px solid #000000;
+    border: 1.5px solid #000;
     border-radius: 32px;
     overflow: hidden;
 }
 
 .calc-box-left {
-    flex: 1.3;
-    background-color: #e65c23;
+    flex: 1.4;
     padding: 40px;
-    color: white;
+    background: #fff;
+}
+
+.calc-box-right {
+    flex: 1;
+    background: #f6f5f3;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1.5px solid #000;
 }
 
 .gender-toggle {
     display: flex;
-    background: rgba(255,255,255,0.2);
-    border-radius: 12px;
-    padding: 4px;
-    width: fit-content;
-    margin-bottom: 30px;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 .gender-btn {
-    border: none;
+    flex: 1;
     background: transparent;
-    color: white;
-    padding: 8px 30px;
-    border-radius: 10px;
+    border: 1.5px solid #000;
+    padding: 12px;
+    border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
 }
 
 .gender-btn.active {
-    background: white;
-    color: #e65c23;
-}
-
-.calc-form {
-    display: flex;
-    flex-direction: column;
+    background: #000;
+    color: #fff;
 }
 
 .form-title {
-    font-size: 16px;
+    display: block;
+    font-size: 15px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .radio-label {
-    background: white;
-    color: black;
-    padding: 14px 20px;
-    border-radius: 30px;
-    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 500;
+    margin-bottom: 12px;
     font-size: 14px;
     cursor: pointer;
 }
@@ -505,225 +613,152 @@ body {
 
 .input-group label {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
-.input-wrap {
-    background: white;
-    border-radius: 20px;
-    padding: 8px 15px;
-}
-
 .input-wrap input {
-    width: 100%; border: none; outline: none;
-    text-align: center; font-weight: 600;
+    width: 100%;
+    border: 1.5px solid #000;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
 }
 
 .calc-select {
-    background: white;
-    border-radius: 30px;
-    padding: 14px 20px;
-    border: none; outline: none;
-    font-weight: 500;
+    width: 100%;
+    border: 1.5px solid #000;
+    padding: 12px;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 14px;
+    margin-bottom: 25px;
 }
 
 .btn-calc-submit {
-    background: black;
-    color: white;
+    width: 100%;
+    background: #e65c23;
+    color: #fff;
     border: none;
+    padding: 16px;
     border-radius: 30px;
-    padding: 15px;
     font-weight: 700;
     font-size: 15px;
-    margin-top: 30px;
     cursor: pointer;
 }
 
-.calc-box-right {
-    flex: 1;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    text-align: center;
-}
-
-.calc-box-right h3 {
-    font-size: 20px;
-    font-weight: 700;
-    max-width: 250px;
-    margin-bottom: 30px;
-}
-
 .result-circle {
-    width: 200px; height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 20px solid #fdf3ef;
+    border: 6px solid #e65c23;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px 0;
+    background: #fff;
 }
 
 .circle-content {
-    display: flex;
-    flex-direction: column;
+    text-align: center;
 }
 
-.result-circle .number {
-    font-size: 48px;
+.circle-content .number {
+    font-size: 40px;
     font-weight: 800;
+    display: block;
     line-height: 1;
 }
 
-.result-circle .unit {
-    font-size: 18px;
+.circle-content .unit {
+    font-size: 14px;
     font-weight: 700;
+    color: #666;
 }
 
 .result-disclaimer {
     font-size: 12px;
-    color: #666;
-    margin-top: 40px;
-    max-width: 240px;
+    color: #505050;
+    text-align: center;
 }
 
-/* SEKCJA: INNE PAKIETY */
+/* BLOG / BAZA WIEDZY */
 .packages-slider {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 .package-item-card {
     border: 1.5px solid #000;
     border-radius: 24px;
     overflow: hidden;
-    background: white;
+    background: #fff;
 }
 
 .pack-img-box {
-    position: relative;
-    height: 180px;
+    height: 200px;
 }
 
 .pack-img-box img {
-    width: 100%; height: 100%; object-fit: cover;
-}
-
-.badge-days {
-    position: absolute;
-    bottom: 12px; left: 12px;
-    background: white;
-    border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 10px;
-    font-weight: 700;
+    width: 100%; height: 100%;
+    object-fit: cover;
 }
 
 .pack-body {
-    padding: 20px;
+    padding: 24px;
+}
+
+.blog-date {
+    font-size: 12px;
+    color: #e65c23;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .pack-body h3 {
     font-size: 18px;
-    font-weight: 800;
-}
-
-.pack-kcal {
-    font-size: 12px;
     font-weight: 700;
-    margin: 4px 0 10px 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
 }
 
-.pack-text {
+.read-more-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
     font-size: 13px;
-    color: #444;
-    height: 80px;
-    overflow: hidden;
-}
-
-.pack-price {
-    font-weight: 700;
-    color: #e65c23;
-    margin: 15px 0;
-}
-
-.pack-buttons {
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
+    margin-top: 15px;
 }
 
 .center-btn-box {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin-top: 40px;
 }
 
-/* DODATKI GRID */
-.addons-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 15px;
-}
-
-.addon-thumb {
-    border: 1.5px solid #000;
-    background: #e65c23;
-    border-radius: 16px;
-    overflow: hidden;
-    aspect-ratio: 1;
-}
-
-.addon-thumb img {
-    width: 100%; height: 100%; object-fit: cover;
-}
-
-/* FOOTER STYLIZACJA */
+/* STOPKA */
 .main-footer {
-    background-color: #0a0b0d;
-    color: #ffffff;
-    padding-top: 80px;
+    background: #f6f5f3;
+    border-top: 1.5px solid #000;
+    padding: 60px 40px 30px 40px;
 }
 
 .footer-top-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 40px 60px 40px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 0.8fr 1fr;
     gap: 40px;
-}
-
-.footer-col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-col h5 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.footer-col a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-.footer-col a:hover {
-    color: white;
 }
 
 .logo-footer {
     font-family: 'Comfortaa', sans-serif;
     font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .footer-bold-text {
@@ -731,96 +766,63 @@ body {
     font-size: 14px;
 }
 
-.phone-badge {
-    background: #e65c23;
+.phone-badge, .email-badge {
+    background: #000;
+    color: #fff;
     padding: 6px 12px;
-    font-weight: 700;
-    border-radius: 4px;
-    width: fit-content;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 5px;
 }
 
-.email-badge {
-    background: #e65c23;
-    padding: 6px 12px;
+.footer-col h5 {
+    font-size: 15px;
     font-weight: 700;
-    border-radius: 4px;
-    width: fit-content;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col a {
+    display: block;
+    color: #333;
+    text-decoration: none;
     font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .footer-links-two-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 2px;
 }
 
-/* METODY PŁATNOŚCI */
 .payment-logos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
 .pay-logo {
-    background: #222;
-    padding: 8px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    text-align: center;
-}
-
-/* PASEK Z MIASTAMI */
-.footer-cities-bar {
-    background-color: #e65c23;
-    padding: 40px;
-}
-
-.cities-container {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-.footer-cities-bar h6 {
-    font-size: 18px;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.cities-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 25px;
-}
-
-.cities-grid a {
-    color: white;
-    text-decoration: underline;
+    border: 1.5px solid #000;
+    padding: 6px 12px;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
+    background: #fff;
+    border-radius: 6px;
 }
 
-/* CHAT WIDGET */
 .chat-widget {
     position: fixed;
     bottom: 30px; right: 30px;
-    width: 65px; height: 65px;
-    background-color: #92be54;
+    width: 60px; height: 60px;
+    background: #e65c23;
     border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(230,92,35,0.3);
     cursor: pointer;
-    z-index: 10000;
-}
-
-/* KLUCZOWA RESPONSYWNOŚĆ (MOBILE) */
-@media (max-width: 1200px) {
-    .variants-grid, .packages-slider { grid-template-columns: repeat(2, 1fr); }
-    .addons-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-@media (max-width: 900px) {
-    .hero-section, .calculator-container, .footer-top-container { flex-direction: column; }
-    .main-nav { display: none; }
-    .variants-grid, .packages-slider, .addons-grid { grid-template-columns: 1fr; }
-}
+    z-index: 9999;
+    }
